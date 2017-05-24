@@ -8,7 +8,7 @@ services:
 before_install:
   - docker build -t lubricy/box ./base-box
   
- after_success:
+after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push lubricy/box;
